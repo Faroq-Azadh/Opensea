@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
+    <title>OpenSea, the largest NFT marketplace</title>
+    <link rel="stylesheet" href="../src/stylecss.css" />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <style>
+    ul {
+      width: 100%;
+    }
+
+    ul li {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <!--Add navbar to site-->
+    <header
+      style="
+      background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.164), rgba(255, 255, 255, 0.603), rgb(255, 255, 255)),
+      url('./img/12206315-5ab8-42f3-8ebd-30615284508b.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      "
+    >
+    <div class="backdrop-blur-lg">
+      <nav class="flex justify-between items-center py-3">
+        <div class="flex items-center">
+          <button class="mx-3 mr-2 Large:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="white"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </button>
+
+          <img class="w-10 h-10 Large:ml-3" src="./img/logo.png" alt="Open sea logo" />
+
+          <svg
+            class="mx-3"
+            fill="white"
+            height="58"
+            style="width: 115px"
+            viewBox="0 0 313 58"
+            width="313"
+          >
+            <path
+              d="M24.7232 47.4966C20.2031 47.4966 16.0484 46.4837 12.2588 44.4579C8.51498 42.432 5.52447 39.6135 3.28729 36.0023C1.09576 32.347 0 28.2513 0 23.7153C0 19.1792 1.09576 15.1055 3.28729 11.4943C5.52447 7.88307 8.51498 5.06454 12.2588 3.03872C16.0484 1.01291 20.2031 0 24.7232 0C29.2432 0 33.3751 1.01291 37.119 3.03872C40.9085 5.06454 43.8762 7.88307 46.0221 11.4943C48.2136 15.1055 49.3094 19.1792 49.3094 23.7153C49.3094 28.2513 48.2136 32.347 46.0221 36.0023C43.8305 39.6135 40.8628 42.432 37.119 44.4579C33.3751 46.4837 29.2432 47.4966 24.7232 47.4966ZM24.7232 37.1913C28.5583 37.1913 31.6173 35.9582 33.9002 33.492C36.2287 31.0258 37.3929 27.7669 37.3929 23.7153C37.3929 19.6196 36.2287 16.3607 33.9002 13.9385C31.6173 11.4723 28.5583 10.2392 24.7232 10.2392C20.8423 10.2392 17.7377 11.4503 15.4092 13.8724C13.1263 16.2946 11.9849 19.5755 11.9849 23.7153C11.9849 27.8109 13.1263 31.0919 15.4092 33.5581C17.7377 35.9803 20.8423 37.1913 24.7232 37.1913Z"
+            ></path>
+            <path
+              d="M67.5356 15.3918C68.677 13.6743 70.2521 12.287 72.261 11.2301C74.2699 10.1731 76.6212 9.64465 79.315 9.64465C82.4653 9.64465 85.3189 10.4153 87.8756 11.9567C90.4324 13.4981 92.4413 15.7001 93.9024 18.5626C95.409 21.4252 96.1624 24.7502 96.1624 28.5376C96.1624 32.325 95.409 35.672 93.9024 38.5786C92.4413 41.4412 90.4324 43.6651 87.8756 45.2506C85.3189 46.792 82.4653 47.5626 79.315 47.5626C76.6669 47.5626 74.3156 47.0342 72.261 45.9772C70.2521 44.9203 68.677 43.5551 67.5356 41.8815V58H55.8246V10.1731H67.5356V15.3918ZM84.2459 28.5376C84.2459 25.7191 83.4241 23.5171 81.7805 21.9317C80.1825 20.3022 78.1964 19.4875 75.8223 19.4875C73.4938 19.4875 71.5077 20.3022 69.8641 21.9317C68.2661 23.5611 67.467 25.7851 67.467 28.6036C67.467 31.4222 68.2661 33.6462 69.8641 35.2756C71.5077 36.9051 73.4938 37.7198 75.8223 37.7198C78.1508 37.7198 80.1368 36.9051 81.7805 35.2756C83.4241 33.6021 84.2459 31.3561 84.2459 28.5376Z"
+            ></path>
+            <path
+              d="M138.329 28.0091C138.329 29.0661 138.261 30.167 138.124 31.3121H111.62C111.803 33.6021 112.556 35.3637 113.88 36.5968C115.25 37.7859 116.916 38.3804 118.88 38.3804C121.802 38.3804 123.833 37.1913 124.975 34.8132H137.439C136.8 37.2354 135.636 39.4153 133.946 41.3531C132.303 43.2908 130.225 44.8102 127.714 45.9112C125.203 47.0121 122.395 47.5626 119.291 47.5626C115.547 47.5626 112.214 46.792 109.292 45.2506C106.37 43.7092 104.087 41.5072 102.443 38.6446C100.8 35.7821 99.9777 32.4351 99.9777 28.6036C99.9777 24.7722 100.777 21.4252 102.375 18.5626C104.018 15.7001 106.301 13.4981 109.223 11.9567C112.145 10.4153 115.501 9.64465 119.291 9.64465C122.989 9.64465 126.276 10.3933 129.152 11.8907C132.029 13.388 134.266 15.5239 135.864 18.2984C137.508 21.0729 138.329 24.3098 138.329 28.0091ZM126.345 25.0364C126.345 23.0987 125.66 21.5573 124.29 20.4123C122.92 19.2673 121.208 18.6948 119.154 18.6948C117.19 18.6948 115.524 19.2453 114.154 20.3462C112.83 21.4472 112.008 23.0106 111.689 25.0364H126.345Z"
+            ></path>
+            <path
+              d="M167.793 9.77676C172.267 9.77676 175.828 11.186 178.476 14.0046C181.17 16.779 182.517 20.6105 182.517 25.4989V47.0342H170.874V27.0182C170.874 24.552 170.212 22.6363 168.888 21.2711C167.564 19.9058 165.784 19.2232 163.547 19.2232C161.309 19.2232 159.529 19.9058 158.205 21.2711C156.881 22.6363 156.219 24.552 156.219 27.0182V47.0342H144.508V10.1731H156.219V15.0615C157.406 13.432 159.004 12.1549 161.013 11.2301C163.021 10.2612 165.281 9.77676 167.793 9.77676Z"
+            ></path>
+            <path
+              d="M208.05 47.4966C204.535 47.4966 201.384 46.9461 198.599 45.8451C195.814 44.7441 193.577 43.1147 191.888 40.9567C190.244 38.7988 189.376 36.2005 189.285 33.1617H201.749C201.932 34.8793 202.548 36.2005 203.599 37.1253C204.649 38.0061 206.018 38.4465 207.708 38.4465C209.443 38.4465 210.812 38.0721 211.817 37.3235C212.821 36.5308 213.324 35.4518 213.324 34.0866C213.324 32.9415 212.913 31.9947 212.091 31.246C211.315 30.4973 210.333 29.8808 209.146 29.3964C208.004 28.9119 206.361 28.3614 204.215 27.7449C201.11 26.82 198.576 25.8952 196.613 24.9704C194.65 24.0456 192.961 22.6803 191.545 20.8747C190.13 19.0691 189.422 16.713 189.422 13.8064C189.422 9.49051 191.043 6.12149 194.285 3.69932C197.526 1.23311 201.749 0 206.954 0C212.251 0 216.519 1.23311 219.761 3.69932C223.003 6.12149 224.738 9.51253 224.966 13.8724H212.296C212.205 12.3751 211.634 11.208 210.584 10.3713C209.534 9.49051 208.187 9.05011 206.543 9.05011C205.128 9.05011 203.987 9.42445 203.119 10.1731C202.252 10.8777 201.818 11.9127 201.818 13.2779C201.818 14.7752 202.548 15.9423 204.01 16.779C205.471 17.6158 207.753 18.5186 210.858 19.4875C213.963 20.5004 216.474 21.4692 218.391 22.3941C220.355 23.3189 222.044 24.6621 223.459 26.4237C224.875 28.1853 225.582 30.4533 225.582 33.2278C225.582 35.8702 224.875 38.2703 223.459 40.4282C222.09 42.5862 220.081 44.3037 217.433 45.5809C214.785 46.858 211.657 47.4966 208.05 47.4966Z"
+            ></path>
+            <path
+              d="M268.813 28.0091C268.813 29.0661 268.744 30.167 268.607 31.3121H242.103C242.286 33.6021 243.039 35.3637 244.363 36.5968C245.733 37.7859 247.4 38.3804 249.363 38.3804C252.285 38.3804 254.317 37.1913 255.458 34.8132H267.922C267.283 37.2354 266.119 39.4153 264.43 41.3531C262.786 43.2908 260.709 44.8102 258.197 45.9112C255.686 47.0121 252.878 47.5626 249.774 47.5626C246.03 47.5626 242.697 46.792 239.775 45.2506C236.853 43.7092 234.57 41.5072 232.926 38.6446C231.283 35.7821 230.461 32.4351 230.461 28.6036C230.461 24.7722 231.26 21.4252 232.858 18.5626C234.501 15.7001 236.784 13.4981 239.706 11.9567C242.628 10.4153 245.984 9.64465 249.774 9.64465C253.472 9.64465 256.759 10.3933 259.636 11.8907C262.512 13.388 264.749 15.5239 266.347 18.2984C267.991 21.0729 268.813 24.3098 268.813 28.0091ZM256.828 25.0364C256.828 23.0987 256.143 21.5573 254.773 20.4123C253.403 19.2673 251.691 18.6948 249.637 18.6948C247.674 18.6948 246.007 19.2453 244.637 20.3462C243.313 21.4472 242.491 23.0106 242.172 25.0364H256.828Z"
+            ></path>
+            <path
+              d="M272.662 28.5376C272.662 24.7502 273.393 21.4252 274.854 18.5626C276.36 15.7001 278.392 13.4981 280.949 11.9567C283.506 10.4153 286.359 9.64465 289.51 9.64465C292.203 9.64465 294.555 10.1731 296.564 11.2301C298.618 12.287 300.193 13.6743 301.289 15.3918V10.1731H313V47.0342H301.289V41.8155C300.148 43.533 298.55 44.9203 296.495 45.9772C294.486 47.0342 292.135 47.5626 289.441 47.5626C286.336 47.5626 283.506 46.792 280.949 45.2506C278.392 43.6651 276.36 41.4412 274.854 38.5786C273.393 35.672 272.662 32.325 272.662 28.5376ZM301.289 28.6036C301.289 25.7851 300.467 23.5611 298.824 21.9317C297.226 20.3022 295.262 19.4875 292.934 19.4875C290.605 19.4875 288.619 20.3022 286.976 21.9317C285.378 23.5171 284.579 25.7191 284.579 28.5376C284.579 31.3561 285.378 33.6021 286.976 35.2756C288.619 36.9051 290.605 37.7198 292.934 37.7198C295.262 37.7198 297.226 36.9051 298.824 35.2756C300.467 33.6462 301.289 31.4222 301.289 28.6036Z"
+            ></path>
+          </svg>
+        </div>
+
+        <div
+          class=" py-1 px-5 ml-3 hidden Large:flex border-l-1 border-white"
+        >
+          <a href="/drops" type="button" class="mr-5" aria-expanded="false">
+            <span class="text-white font-semibold">Drops</span>
+          </a>
+          <a href="/rankings" type="button" class="ml-5" aria-expanded="false">
+            <span class="text-white font-semibold">Stats</span>
+          </a>
+        </div>
+
+        <div class="flex w-9/12 justify-end">
+          <button
+            class="mx-5 mr-0 bg-gray-500 bg-opacity-25 backdrop-blur-lg p-3 rounded-xl Tablet:hidden text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+
+          <div
+            class="mx-5 mr-0 bg-gray-500 bg-opacity-25 backdrop-blur-lg p-3 rounded-xl hidden w-full Tablet:flex Tablet:justify-between"
+          >
+          <div class="flex">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                fill="currentColor"
+                class="bi bi-search mr-3 text-white"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+                Search
+              </svg>
+            </div>
+            <input
+              class="bg-transparent placeholder:text-white"
+              placeholder="Search items, collections, and accounts"
+              type="search"
+              value=""
+              style="cursor: text"
+            />
+            </div>
+            <div class="text-white bg-gray-500 bg-opacity-25 backdrop-blur-lg px-[10px] rounded-lg">/</div>
+          </div>
+
+          <div
+            class="items-center justify-around bg-gray-500 bg-opacity-25 backdrop-blur-lg w-96 ml-2 rounded-xl hidden Desktop:flex"
+          >
+            <button type="button" class="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                fill="white"
+                class="bi bi-wallet-fill mr-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"
+                />
+                <path
+                  d="M16 6.5h-5.551a2.678 2.678 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5c-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-6z"
+                />
+              </svg>
+              <span color="white" class="text-white">Connect wallet</span>
+            </button>
+            <div
+              class="border-l-1 pl-2 h-full flex justify-items-center items-center"
+            >
+              <a class="" href="/account" aria-expanded="false">
+                <svg
+                  width="26"
+                  height="26"
+                  fill="white"
+                  class="bi bi-person-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <button class="mx-3 ml-2 bg-gray-500 bg-opacity-25 backdrop-blur-lg p-3 rounded-xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-cart3 text-white"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!--Header part-->
+      <section>
+        <div
+          class="flex list-none py-2 px-4 overflow-auto no-scrollbar font-bold text-xl text-white items-center"
+        >
+          <li class="mx-4 ml-0 py-2 px-3 bg-gray-500 bg-opacity-25 backdrop-blur-lg rounded-xl">
+            <a href="/">
+              <span>All</span>
+            </a>
+          </li>
+          <li class="mx-4">
+            <a href="/category/art">
+              <span>Art</span>
+            </a>
+          </li>
+          <li class="mx-4">
+            <a href="/category/gaming">
+              <span>Gaming</span>
+            </a>
+          </li>
+          <li class="mx-4">
+            <a href="/category/memberships">
+              <span>Memberships</span>
+            </a>
+          </li>
+          <li class="mx-4">
+            <a href="/category/pfps">
+              <span>PFPs</span>
+            </a>
+          </li>
+          <li class="mx-4">
+            <a href="/category/photography">
+              <span>Photography</span>
+            </a>
+          </li>
+          <li class="mx-4 mr-0">
+            <a href="/category/music">
+              <span>Music</span>
+            </a>
+          </li>
+        </div>
+
+        <div
+          class="flex flex-nowrap w-full p-4 overflow-hidden overflow-x-auto no-scrollbar"
+        >
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/12206315-5ab8-42f3-8ebd-30615284508b.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="font-bold">DOT.EXE</h5>
+              <span>Floor: 0.01 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/2a65c30f-8e06-4b61-9a69-6390786f6ca7.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="font-bold">@Work by MarkTheHabibi</h5>
+              <span>Floor: 0.04 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/1e977e95-3fda-42b5-b01c-e1b856650e3a.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="flex items-center font-bold">
+                Spatial X
+                <img
+                  style="width: 15px; height: 15px; margin-left: 5px"
+                  src="./img/icons8-verified-48.png"
+                  alt="verify"
+                />
+              </h5>
+              <span>Floor: 0.03 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/1.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="font-bold">Your Own Peace</h5>
+              <span>Floor: 0.04 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/316c8665-7e79-46a9-82f0-05a8c2b53dc2.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="font-bold">The Portraits</h5>
+              <span>Floor: 0.01 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/7758f4ae-849d-4339-b5bd-31c72aacd973.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="flex items-center font-bold">
+                Beanbag Frens
+                <img
+                  style="width: 15px; height: 15px; margin-left: 5px"
+                  src="./img/icons8-verified-48.png"
+                  alt="verify"
+                />
+              </h5>
+              <span>Floor: 0.06 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/80259aa8-d8b5-47ab-8267-8ca4d9c68798.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="flex items-center font-bold">
+                The Bridged by Kiraverse
+                <img
+                  style="width: 15px; height: 15px; margin-left: 5px"
+                  src="./img/icons8-verified-48.png"
+                  alt="verify"
+                />
+              </h5>
+              <span>Floor: 0.02 ETH</span>
+            </div>
+          </div>
+          <div class="p-1 relative">
+            <img
+              class="w-[365px] max-w-none rounded-2xl"
+              src="./img/91ec0447-97a5-49cb-807e-b29ef9b3c140.avif"
+              alt="Picture"
+            />
+            <div class="absolute bottom-4 left-4 text-white">
+              <h5 class="font-bold">Soundscapes by Bobby Yaps</h5>
+              <span>Floor: 0.02 ETH</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    </header>
+
+    <!--Category-->
+    <section class="flex justify-between">
+      <div
+        style="background-color: rgba(18, 18, 18, 0.04)"
+        class="inline-flex mt-10 ml-5 p-1 justify-between w-[170px] rounded-xl pr-5 Desktop:py-1"
+      >
+        <button
+          class="font-bold bg-white p-1 Desktop:py-2 px-4 rounded-xl"
+          type="button"
+        >
+          Trending
+        </button>
+        <button class="font-bold" type="button">Top</button>
+      </div>
+
+      <div>
+        <div class="hidden Tlg:inline-flex">
+          <div
+            style="background-color: rgba(18, 18, 18, 0.04)"
+            class="inline-flex justify-between w-[90px] mt-10 mr-2 p-1 rounded-xl items-center font-bold px-5 Desktop:py-3 Desktop:hidden"
+          >
+            24h
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </div>
+
+          <div
+            style="background-color: rgba(18, 18, 18, 0.04)"
+            class="hidden Desktop:inline-flex justify-between w-[220px] mt-10 mr-2 p-1 rounded-xl items-center font-bold px-3 Desktop:py-1"
+          >
+            <button
+              class="font-bold bg-white p-1 Desktop:py-2 px-4 rounded-xl"
+              type="button"
+            >
+              1h
+            </button>
+            <button class="font-bold" type="button">6h</button>
+            <button class="font-bold" type="button">24h</button>
+            <button class="font-bold" type="button">7d</button>
+          </div>
+
+          <div
+            style="background-color: rgba(18, 18, 18, 0.04)"
+            class="inline-flex justify-between w-[140px] mt-10 mr-1 p-2 rounded-xl items-center font-bold px-5"
+          >
+            All chains
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div
+          style="background-color: rgba(18, 18, 18, 0.04)"
+          class="inline-flex mt-10 mr-5 p-2 rounded-xl items-center font-bold px-5 Desktop:py-3"
+        >
+          View all
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-2 Tlg:hidden">
+      <div
+        style="background-color: rgba(18, 18, 18, 0.04)"
+        class="mt-4 ml-5 inline-flex justify-between font-bold p-1 rounded-xl items-center px-3"
+      >
+        All chains
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chevron-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+
+      <div
+        style="background-color: rgba(18, 18, 18, 0.04)"
+        class="mt-4 ml-2 mr-5 inline-flex justify-between font-bold p-1 rounded-xl items-center px-3"
+      >
+        24h
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chevron-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!--Tables-->
+    <section class="flex p-5  mt-5 mx-5 justify-between overflow-auto">
+        <div class="min-w-F Desktop:min-w-D">
+            <div class="flex w-full justify-between text-gray-500 border-b-1 pb-3 Large:hidden">
+              <div class="flex justify-between  w-24">
+              <p>#</p>
+              Collection
+              </div>
+              <div class="">Volume</div>
+            </div>
+
+            <div class="hidden Large:flex w-full justify-between text-gray-500 border-b-1 pb-3">
+                <div class="flex justify-between w-32">
+                    <p>Rank</p>
+                    <p>Collection</p>
+                </div>
+                <div class="flex justify-between w-44">
+                  <p>Floor Price</p>
+                  <p>Volume</p>
+              </div>
+            </div>
+
+            <div>
+              <ol>
+                <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                  <div class="flex items-center">
+                    <div class="font-semibold text-xl mr-5">1</div>
+                    <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-5" src="./img/1avif.avif" alt="sphpp">
+                    <div class="Large:flex">
+                      <p class="text-md font-medium">sphpp</p>
+                      <div class="flex items-center Large:hidden">
+                        <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                          <div class="flex items-center">
+                            <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                            <p class="mr-1">0.01</p>
+                          </div>
+                          <p>ETH</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="font-medium Large:hidden">10 ETH</div>
+
+                  <div class="hidden Large:flex justify-between">
+                  <div class="hidden font-medium  Large:block mr-10">0.02 ETH</div>
+                  <div class="font-medium">10 ETH</div>
+                  </div>
+
+                </li>
+
+                <li>
+                  <a class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg" href="./parallel.html">
+                  <div class="flex items-center">
+                    <div class="font-semibold text-xl mr-5">2</div>
+                    <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/2.avif" alt="Parallel Alpha">
+                    <div>
+                      <p class="text-md font-medium flex items-center">Parallel Alpha
+                        <img
+                          style="width: 15px; height: 15px; margin-left: 5px"
+                          src="./img/icons8-verified-48.png"
+                          alt="verify"
+                        />
+                      </p>
+                      <div class="flex items-center Large:hidden">
+                        <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                          <div class="flex items-center">
+                            <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                            <p class="mr-1">0.15</p>
+                          </div>
+                          <p>PRIME</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="font-medium Large:hidden">52 ETH</div>
+                  <div class="hidden Large:flex justify-between">
+                    <div class="hidden font-medium  Large:block mr-10">0.15 PRIME</div>
+                    <div class="font-medium">31 ETH</div>
+                  </div>
+                  </a>
+                </li>
+
+                <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                  <div class="flex items-center">
+                    <div class="font-semibold text-xl mr-5">3</div>
+                    <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/3.avif" alt="Yogapetz">
+                    <div>
+                      <p class="text-md font-medium">Yogapetz</p>
+                      <div class="flex items-center Large:hidden">
+                        <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                          <div class="flex items-center">
+                            <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                            <p class="mr-1">0.30</p>
+                          </div>
+                          <p>ETH</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="font-medium Large:hidden">271 ETH</div>
+                  <div class="hidden Large:flex justify-between">
+                    <div class="hidden font-medium  Large:block mr-10">0.60 ETH</div>
+                    <div class="font-medium">271 ETH</div>
+                  </div>
+                </li>
+
+                <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                  <div class="flex items-center">
+                    <div class="font-semibold text-xl mr-5">4</div>
+                    <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/4.avif" alt="Mutant Ape Yacht Club">
+                    <div>
+                      <p class="text-md font-medium flex items-center">Mutant ...
+                        <img
+                          style="width: 15px; height: 15px; margin-left: 5px"
+                          src="./img/icons8-verified-48.png"
+                          alt="verify"
+                        />
+                      </p>
+                      <div class="flex items-center Large:hidden">
+                        <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                          <div class="flex items-center">
+                            <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                            <p class="mr-1">5.32</p>
+                          </div>
+                          <p>ETH</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="font-medium Large:hidden">1,400 ETH</div>
+                  <div class="hidden Large:flex justify-between">
+                    <div class="hidden font-medium  Large:block mr-10">5.23 ETH</div>
+                    <div class="font-medium">1,400 ETH</div>
+                  </div>
+                </li>
+
+                <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                  <div class="flex items-center">
+                    <div class="font-semibold text-xl mr-5">5</div>
+                    <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/5.avif" alt="Trump Digital Trading Cards Series 2">
+                    <div>
+                      <p class="text-md font-medium flex items-center">Azuki
+                        <img
+                          style="width: 15px; height: 15px; margin-left: 5px"
+                          src="./img/icons8-verified-48.png"
+                          alt="verify"
+                        />
+                      </p>
+                      <div class="flex items-center Large:hidden">
+                        <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                          <div class="flex items-center">
+                            <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                            <p class="mr-1">4.00</p>
+                          </div>
+                          <p>ETH</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="font-medium Large:hidden">868 ETH</div>
+                  <div class="hidden Large:flex justify-between">
+                    <div class="hidden font-medium  Large:block mr-10">4.00 ETH</div>
+                    <div class="font-medium">868 ETH</div>
+                  </div>
+                </li>
+              </ol>
+
+            </div>
+        </div>
+
+        <div class="min-w-F ml-5 Desktop:min-w-D">
+          <div class="flex w-full justify-between text-gray-500 border-b-1 pb-3 Large:hidden">
+            <div class="flex justify-between  w-24">
+            <p>#</p>
+            Collection
+            </div>
+            <div class="">Volume</div>
+          </div>
+
+          <div class="hidden Large:flex w-full justify-between text-gray-500 border-b-1 pb-3">
+              <div class="flex justify-between w-32">
+                  <p>Rank</p>
+                  <p>Collection</p>
+              </div>
+              <div class="flex justify-between w-44">
+                <p>Floor Price</p>
+                <p>Volume</p>
+            </div>
+          </div>
+
+          <div>
+            <ol>
+              <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                <div class="flex items-center">
+                  <div class="font-semibold text-xl mr-5">6</div>
+                  <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-5" src="./img/6.avif" alt="Redacted Remilio Babies">
+                  <div class="Large:flex items-center">
+                    <p class="text-md font-medium">Redacted ...</p>
+                    <img
+                        style="width: 15px; height: 15px; margin-left: 5px"
+                        src="./img/icons8-verified-48.png"
+                        alt="verify"
+                      />
+                    <div class="flex items-center Large:hidden">
+                      <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                        <div class="flex items-center">
+                          <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                          <p class="mr-1">2.86</p>
+                        </div>
+                        <p>ETH</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="font-medium Large:hidden">732 ETH</div>
+
+                <div class="hidden Large:flex justify-between">
+                <div class="hidden font-medium  Large:block mr-10">2.86 ETH</div>
+                <div class="font-medium">732 ETH</div>
+                </div>
+
+              </li>
+
+              <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                <div class="flex items-center">
+                  <div class="font-semibold text-xl mr-5">7</div>
+                  <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/7.avif" alt="DeGods">
+                  <div>
+                    <p class="text-md font-medium flex items-center">DeGods
+                      <img
+                        style="width: 15px; height: 15px; margin-left: 5px"
+                        src="./img/icons8-verified-48.png"
+                        alt="verify"
+                      />
+                    </p>
+                    <div class="flex items-center Large:hidden">
+                      <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                        <div class="flex items-center">
+                          <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                          <p class="mr-1">3.97</p>
+                        </div>
+                        <p>ETH</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="font-medium Large:hidden">656 ETH</div>
+                <div class="hidden Large:flex justify-between">
+                  <div class="hidden font-medium  Large:block mr-10">3.97 ETH</div>
+                  <div class="font-medium">656 ETH</div>
+                </div>
+              </li>
+
+              <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                <div class="flex items-center">
+                  <div class="font-semibold text-xl mr-5">8</div>
+                  <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/8.avif" alt="Metakeys DAO">
+                  <div>
+                    <p class="text-md font-medium">Metakeys DAO</p>
+                    <div class="flex items-center Large:hidden">
+                      <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                        <div class="flex items-center">
+                          <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                          <p class="mr-1">0.55</p>
+                        </div>
+                        <p>ETH</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="font-medium Large:hidden">55 ETH</div>
+                <div class="hidden Large:flex justify-between">
+                  <div class="hidden font-medium  Large:block mr-10">0.55 ETH</div>
+                  <div class="font-medium">55 ETH</div>
+                </div>
+              </li>
+
+              <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                <div class="flex items-center">
+                  <div class="font-semibold text-xl mr-5">9</div>
+                  <img class="w-14 Desktop:w-[72px] rounded-xl mr-2 Desktop:mr-5 Large:ml-4" src="./img/9.avif" alt="A Daydream For Libby by genlight">
+                  <div>
+                    <p class="text-md font-medium flex items-center">A Daydr...
+                      <img
+                        style="width: 15px; height: 15px; margin-left: 5px"
+                        src="./img/icons8-verified-48.png"
+                        alt="verify"
+                      />
+                    </p>
+                    <div class="flex items-center Large:hidden">
+                      <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                        <div class="flex items-center">
+                          <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                          <p class="mr-1">0.17</p>
+                        </div>
+                        <p>ETH</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="font-medium Large:hidden">33 ETH</div>
+                <div class="hidden Large:flex justify-between">
+                  <div class="hidden font-medium  Large:block mr-10">0.17 ETH</div>
+                  <div class="font-medium">33 ETH</div>
+                </div>
+              </li>
+
+              <li class="flex justify-between items-center mt-4 Tlg:mt-6 Large:ml-3 Large:text-lg">
+                <div class="flex items-center">
+                  <div class="font-semibold text-xl mr-5">10</div>
+                  <img class="w-14 Desktop:w-[72px] rounded-xl mr-2  Desktop:mr-5 Large:ml-2.5" src="./img/10.avif" alt="Rare Apepes">
+                  <div>
+                    <p class="text-md font-medium flex items-center">Rare Apepes
+                      <img
+                        style="width: 15px; height: 15px; margin-left: 5px"
+                        src="./img/icons8-verified-48.png"
+                        alt="verify"
+                      />
+                    </p>
+                    <div class="flex items-center Large:hidden">
+                      <div class="text-sm font-medium text-gray-600 flex items-center Desktop:grid">
+                        <div class="flex items-center">
+                          <p class="text-sm font-light mr-1 leading-7"> Floor:</p>
+                          <p class="mr-1">0.06</p>
+                        </div>
+                        <p>ETH</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="font-medium Large:hidden">7 ETH</div>
+                <div class="hidden Large:flex justify-between">
+                  <div class="hidden font-medium  Large:block mr-10">0.06 ETH</div>
+                  <div class="font-medium">7 ETH</div>
+                </div>
+              </li>
+            </ol>
+
+          </div>
+      </div>
+    </section>
+
+    <!--Collections-->
+    <section class="p-5 mt-4 ">
+      <!--part 1-->
+      <div class="Tlg:mx-5">
+        <h1 class="text-xl font-medium">Notable Collections</h1>
+        <div class="flex overflow-x-auto no-scrollbar mt-4 pb-11">
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c1.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Diary by Vinnie Hager</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.03 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">96 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px]  rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c2.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Nouns</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">36.97 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">24K ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c3.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">ZERO x IREZUMI</p>
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">__</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">0.00 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c4.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">10KTF G Tags</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.33 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">286 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c5.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Yue Minjun - Kingdom of the ...</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.25 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">666 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c6.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Fold by rudxane</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.17 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">127 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c7.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">MoonCats</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.24 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">21K ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c8.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Space Riders NFT</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.09 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">3,734 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c9.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">VeeFriends</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">1.87 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">67K ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md">
+            <div class="w-[280px] bg-[url(./img/c10.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Singularity by Hideki Tsukam...</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">2.35 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">5,281 ETH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" Tlg:mx-5">
+        <h1 class="text-xl font-medium">Hispanic Heritage Month Spotlight</h1>
+        <div class="flex overflow-x-auto no-scrollbar mt-4 pb-11">
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c12.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Valfrelandia</p>
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.08 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">21 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px]  rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c13.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Monster in the city</p>
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.25 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">1 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c14.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Boots Moods</p>
+              
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">010 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">1 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c15.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">GlitchColor</p>
+              
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.02 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">0.31 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c16.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">The Beauty of the Letters</p>
+              
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.03 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">1.00 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c17.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">Epiphanies by Jimena Buena ...</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.50 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">2 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c18.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">NYC Underground Stories by Monaris</p>
+        
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">1.80 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">56 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c19.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">CREYZIES</p>
+              <img
+              style="width: 17px; height: 17px; margin-left: 5px"
+              src="./img/icons8-verified-48.png"
+              alt="verify"
+              />
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.03 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">1,993 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/c20.avif)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="flex items-center mt-3 mx-3"><p class="text-base font-medium">NOTES OF MY LIFE / LA PASTORA - 2009</p>
+              
+            </div>
+            <div class="flex mt-4 mb-3 mx-3">
+              <div class="w-1/2">
+                <p class="text-sm text-gray-700">Floor</p>
+                <p class="text-sm font-semibold">0.02 ETH</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700">Total volume</p>
+                <p class="text-sm font-semibold">0.08 ETH</p>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <div class=" Tlg:mx-5">
+        <div class="flex justify-between">
+          <h1 class="text-xl font-medium">NFT 101</h1>
+          <button style="background-color: rgba(18, 18, 18, 0.04)" class="p-2 rounded-xl font-semibold">Learn more</button>
+        </div>
+        <div class="flex overflow-x-auto no-scrollbar mt-4 pb-11">
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n1.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">What is an NFT?</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n2.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">How to buy an NFT</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n3.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">What is minting?</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n4.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">How to stay protected in web3</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n5.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">How to create an NFT on OpenSea</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n6.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">How to sell an NFT using OpenSea</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n7.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">What is a crypto wallet?</p>
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="w-[280px] rounded-xl shadow-md mr-2 Tlg:mr-5">
+            <div class="w-[280px] bg-[url(./img/n8.webp)] h-[196px] bg-cover rounded-t-xl shadow-xl"></div>
+            <div class="mt-3 mb-8 mx-3"><p class="text-base font-medium">Who is OpenSea?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-blue-600 pt-6 p-3">
+    <div class="Large:flex">
+      <div class="flex flex-col items-center Large:items-start Large:w-1/2 Large:px-5 Large:mr-36">
+        <h1 class="text-xl text-white font-semibold Large:ml-5">Stay in the loop</h1>
+        <p class="w-11/12 text-white pt-3 text-center Large:ml-5 Large:text-left">Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating OpenSea.</p>
+        <div class="flex justify-center pt-5 w-11/12">
+          <input class="w-8/12 h-12 rounded-xl mr-3" type="email" placeholder="   Your email address">
+          <button class="bg-blue-500 px-8 rounded-xl text-white font-semibold">Sign up</button>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center pt-9 pb-9 Large:items-start Large:w-1/2 Large:pl-20">
+        <h1 class="text-xl text-white font-semibold">Join the community</h1>
+        <div class="flex flex-wrap justify-center pt-5">
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg>
+          </button>
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg>
+          </button>
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-discord" viewBox="0 0 16 16">
+              <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+            </svg>
+          </button>
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-reddit" viewBox="0 0 16 16">
+              <path d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"/>
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"/>
+            </svg>
+          </button>
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-youtube" viewBox="0 0 16 16">
+              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            </svg>
+          </button class="bg-blue-500 p-3 rounded-xl mr-2">
+          <button class="bg-blue-500 p-3 rounded-xl mt-2 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-tiktok" viewBox="0 0 16 16">
+              <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+            </svg>
+          </button>
+          <button class="bg-blue-500 p-3 rounded-xl mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+      <hr class="h-1 mt-5 mb-5">
+      <div class="Desktop:flex">
+        <div class="flex flex-col items-center Desktop:items-start Desktop:w-1/4">
+          <svg class="w-12 ml-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+            </style>
+            <path class="st0" d="M50.4,0.5C22.8,0.3,0.3,22.8,0.5,50.4c0.2,26.9,22.2,48.8,49.1,49.1c27.7,0.2,50.2-22.3,49.9-49.9  C99.3,22.7,77.3,0.7,50.4,0.5z M35.6,25.9L35.6,25.9L35.6,25.9c3.1,3.9,4.9,8.8,4.9,14.2c0,4.6-1.4,8.9-3.7,12.5H20.2L35.6,25.9  C35.6,25.9,35.6,25.9,35.6,25.9z M86.3,58.5c0,0.2-0.1,0.4-0.3,0.5c-1.1,0.5-4.8,2.2-6.4,4.4c-4,5.5-7,14.3-13.8,14.3H37.3  c-10.1,0-18.5-8-18.4-18.6c0-0.3,0.2-0.5,0.5-0.5h13.4c0.5,0,0.8,0.4,0.8,0.8v2.6c0,1.4,1.1,2.5,2.5,2.5h10.2v-5.9h-7  c4-5.1,6.4-11.5,6.4-18.5c0-7.8-3-14.9-7.9-20.2c3,0.3,5.8,0.9,8.4,1.7v-1.7c0-1.7,1.4-3.1,3.1-3.1c1.7,0,3.1,1.4,3.1,3.1v4  c9.5,4.4,15.8,11.8,15.8,20.2c0,4.9-2.1,9.5-5.8,13.3c-0.7,0.7-1.7,1.1-2.7,1.1h-7.2v5.9h9c1.9,0,5.4-3.7,7.1-5.9  c0,0,0.1-0.1,0.3-0.2c0.2-0.1,16.6-3.8,16.6-3.8c0.3-0.1,0.7,0.2,0.7,0.5L86.3,58.5L86.3,58.5z"/>
+            </svg>
+            <a class="mt-3 ml-2 text-lg text-white font-bold mb-3" href="https://opensea.io" target="_blank">OpenSea</a>
+            <p class="w-11/12 text-white text-center">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
+        </div>
+        <div class="mt-8 grid grid-cols-2 Tlg:grid-cols-4 Desktop:w-3/4">
+          <div class="flex flex-col items-center">
+            <h1 class="text-white font-semibold mb-3">Marketplace</h1>
+                <a class="text-white font-light mb-2" href="/assets">All NFTs</a>
+              
+            
+                <a class="text-white font-light mb-2" href="/category/art">Art</a>
+              
+            
+                <a class="text-white font-light mb-2" href="/category/gaming">Gaming</a>
+              
+            
+                <a class="text-white font-light mb-2" href="/category/memberships">Memberships</a>
+              
+            
+                <a class="text-white font-light mb-2" href="/category/pfps">PFPs</a>
+              
+            
+                <a class="text-white font-light mb-2" href="/category/photography">Photography</a>
+              
+            
+                <a class="text-white font-light" href="/category/music">Music</a>
+              
+          </div>
+          <div>
+            <div class="flex flex-col items-center mb-10">
+              <h1 class="text-white font-semibold mb-3">My Account</h1>
+              <a class="text-white font-light mb-2" href="/account">Profile</a>
+              <a class="text-white font-light mb-2" href="/account/favorites">Favorites</a>
+              <a class="text-white font-light mb-2" href="/rankings/watchlist">Watchlist</a>
+              <a class="text-white font-light mb-2" href="/collections">My collections</a>
+              <a class="text-white font-light mb-2" href="/asset/create">Create</a>
+              <a class="text-white font-light mb-2" target="_blank">OpenSea Pro</a>
+              <a class="text-white font-light" href="/account/settings">Settings</a>
+            </div>
+            <div class="flex flex-col items-center mb-5">
+              <h1 class="text-white font-semibold mb-3">Stats</h1>
+              <a class="text-white font-light mb-2" href="/rankings">Rankings</a>
+              <a class="text-white font-light" href="/activity">Activity</a>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <h1 class="text-white font-semibold mb-3">Resources</h1>
+            <a class="text-white font-light mb-2" href="https://opensea.io/blog" rel="" target="_blank">Blog</a>
+            <a class="text-white font-light mb-2" href="https://opensea.io/learn" rel="" target="_blank">Learn</a>
+            <a class="text-white font-light mb-2" href="https://support.opensea.io/" rel="" target="_blank">Help center</a>
+            <a class="text-white font-light mb-2" href="https://opensea.io/community-standards" rel="" target="_blank">Community standards</a>
+            <a class="text-white font-light mb-2" target="_blank" href="/tax-resources">Taxes</a>
+            <a class="text-white font-light mb-2" href="https://opensea.io/partners" rel="" target="_blank">Partners</a>
+            <a class="text-white font-light mb-2" href="https://docs.opensea.io" rel="" target="_blank">Developer platform</a>
+            <a class="text-white font-light" href="https://status.opensea.io" rel="" target="_blank">Platform status</a>
+          </div>
+          <div>
+            <div class="flex flex-col items-center mb-10">
+              <h1 class="text-white font-semibold mb-3">Resources</h1>
+              <a class="text-white font-light mb-2" href="/about">About</a>
+              <a class="text-white font-light mb-2" href="/careers">Careers</a>
+              <a class="text-white font-light" href="/opensea-ventures">Ventures</a>
+            </div>
+            <div class="flex flex-col items-center mb-5">
+              <h1 class="text-white font-semibold mb-3">Learn</h1>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-are-nfts" rel="" target="_blank">What is an NFT?</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/how-to-buy-nft" rel="" target="_blank">How to buy an NFT</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-are-nft-drops" rel="" target="_blank">What are NFT drops?</a>
+              <a class="text-white font-light mb-2 text-center" href="https://opensea.io/learn/how-to-sell-nfts" rel="" target="_blank">How to sell an NFT using OpenSea</a>
+              <a class="text-white font-light mb-2 text-center" href="https://opensea.io/learn/how-to-create-an-nft" rel="" target="_blank">How to create an NFT on OpenSea</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-is-crypto-wallet" rel="" target="_blank">What is a crypto wallet?</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-is-cryptocurrency" rel="" target="_blank">What is cryptocurrency?</a>
+              <a class="text-white font-light mb-2 text-center" href="https://opensea.io/learn/nft-gas-fees" rel="" target="_blank">What are blockchain gas fees?</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-is-blockchain" rel="" target="_blank">What is a blockchain?</a>
+              <a class="text-white font-light mb-2" href="https://opensea.io/learn/what-is-web3" rel="" target="_blank">What is web3?</a>
+              <a class="text-white font-light mb-2 text-center" href="https://opensea.io/learn/how-to-stay-protected-in-web3" target="_blank">How to stay protected in web3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="h-1 mt-5 mb-5">
+      <div class="flex flex-col items-center mb-5 Tlg:flex-row Tlg:justify-between">
+        <p class="text-sm text-white">© 2018 - 2023 Ozone Networks, Inc</p>
+        <div>
+          <a class="text-sm text-white" href="/privacy">Privacy Policy</a>
+          <a class="text-sm text-white ml-5" href="/tos">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html
