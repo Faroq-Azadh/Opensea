@@ -2,5 +2,5 @@
 
 ## A Responsive project with tailwind
 
-https://github.com/Faroq-Azadh/Open-Sea/assets/141401717/29be49f9-7ee0-42cc-825e-6f0cc622cc52
+https://github.com/Faroq-Azadh/Opensea/assets/141401717/71da7d3d-04b5-4b04-8b43-61e9c86c335e
 
